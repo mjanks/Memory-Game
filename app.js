@@ -80,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[optionOneId].setAttribute('src', 'images/white.png');
       cards[optionTwoId].setAttribute('src', 'images/white.png');
       cardsWon.push(cardsChosen);
+      cards[optionOneId].removeEventListener('click', flipCard);
+      cards[optionTwoId].removeEventListener('click', flipCard);
     } else {
       cards[optionOneId].setAttribute('src', 'images/blank.jpg');
       cards[optionTwoId].setAttribute('src', 'images/blank.jpg');
@@ -89,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cardsChosenId = [];
     resultDisplay.textContent = cardsWon.length;
     if (cardsWon.length === cardArray.length / 2) {
-      resultDisplay.textContent = "Congratulations! You've found them all!!";
+      resultDisplay.textContent = " Congratulations! You've found them all!!";
     }
   }
 
